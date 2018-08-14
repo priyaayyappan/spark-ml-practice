@@ -10,7 +10,7 @@ public class LDAClustering {
 
     public static void getTopics(SparkSession spark) {
 
-        Dataset<Row> dataset = spark.read().format("libsvm").load("/Users/p0a005a/Dev/spark-ml/data/sample_lda_libsvm_data.txt");
+        Dataset<Row> dataset = spark.read().format("libsvm").load("sample_lda_libsvm_data.txt");
 
         LDA lda = new LDA().setK(10).setMaxIter(10);
         LDAModel model = lda.fit(dataset);

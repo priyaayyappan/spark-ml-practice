@@ -16,7 +16,7 @@ public class KMeansClustering {
     public static void getClusterCenters(SparkSession spark) {
 
 
-        Dataset<Row> dataset = spark.read().format("libsvm").load("/Users/p0a005a/Dev/spark-ml/data/sample_kmeans_data.txt");
+        Dataset<Row> dataset = spark.read().format("libsvm").load("sample_kmeans_data.txt");
 
         KMeans kMeans = new KMeans().setK(2).setSeed(1L);
         KMeansModel model = kMeans.fit(dataset);
